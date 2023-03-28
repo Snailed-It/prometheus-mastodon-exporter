@@ -223,7 +223,9 @@
                   {:status  503
                    :headers {"Content-Type" "text/plain"}
                    :body    "Internal error! Check stderr logs"})))]
-    (http.server/run-server app {:port port})))
+    (println "Starting server")
+    (http.server/run-server app {:port port})
+    (println (str "Started server on " port))))
 
 (defn main
   "Main entry point."
